@@ -1,0 +1,1 @@
+java -Xmx32m -Xss256k -jar target/demo-0.0.1-SNAPSHOT.jar
