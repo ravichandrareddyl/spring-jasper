@@ -13,7 +13,7 @@
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-parent</artifactId>
+		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.9.RELEASE</version>
 		<relativePath/>
 	</parent>
@@ -21,8 +21,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.6</java.version>
-		<!-- <spring.version>1.5.9.RELEASE</spring.version> -->
+		<java.version>1.7</java.version>
 	</properties>
 	
 	<!-- <dependencyManagement>
@@ -40,17 +39,17 @@
 	
 
 	<dependencies>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
+		</dependency> -->
 		
 		
 		<!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
 		<dependency>
 		    <groupId>net.sf.jasperreports</groupId>
 		    <artifactId>jasperreports</artifactId>
-		    <version>6.2.0</version>
+		    <version>6.5.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports-fonts -->
 		<dependency>
@@ -59,16 +58,16 @@
 		    <version>6.0.0</version>
 		</dependency>
 		
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
+		</dependency> -->
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
+		</dependency> -->
 		<!-- Exclude teh default Tomcat connection pool -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -111,8 +110,23 @@
                     </execution>
                 </executions> -->
             </plugin>
+             <plugin> 
+          		<groupId>org.apache.maven.plugins</groupId>
+          		<artifactId>maven-checkstyle-plugin</artifactId>
+          		<version>2.16</version>
+          		<dependencies>
+          			<dependency>
+          				<groupId>com.puppycrawl.tools</groupId>
+          				<artifactId>checkstyle</artifactId>
+          				<version>5.3</version>
+          			</dependency> 
+					<dependency>
+						<groupId>org.bouncycastle</groupId>
+						<artifactId>bcmail-jdk14</artifactId>
+						<version>1.58</version>
+					</dependency> 
+          </dependencies> 
+        </plugin>
         </plugins>
     </build>
-
-
 </project>
